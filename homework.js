@@ -1,7 +1,7 @@
 class Hamster {
-    constructor( owner, name, price) {
-        this.owner = owner;
-        this.name = name;
+    constructor(name) {
+        this.owner = '';
+        this.name1 = name;
         this.price = 15;
     }
     wheelRun() {
@@ -11,17 +11,20 @@ class Hamster {
         console.log(`nibble nibble`)
     }
     getPrice() {
-        console.log(`return the ${this.price}`)
+        console.log(`${this.name1} costs ${this.price} dollars`)
+    }
+    getCost(){
+        return this.price
     }
 }
 
-const hamster = new Hamster('Mishelle', 'Chonky', '')
+const hamster = new Hamster('Chonky')
+hamster.owner = 'Mishelle'
 console.log(hamster)
 //hamster.price = 7
 //console.log(hamster)
 //Hamster {owner: 'Mishelle', name: 'Chonky', price: 15}
-const gus = new Hamster('Timmy', 'Gus', '')
-//Gus has been created
+
 class Person {
     constructor(name){
         this.name = name;
@@ -71,7 +74,7 @@ class Person {
         buyHamster(hamster){
             this.hamsters.push(hamster)
             this.mood+=10
-            this.bankAcount-=hamster.getPrice()
+            this.bankAcount -= hamster.getCost()
         }
 }
 const timmy = new Person('Timmy')
@@ -91,3 +94,10 @@ for (let i = 0; i < 4; i++){
 }
 timmy.getAge()//Timmy is 9 yrs old
 timmy.money()// Timmy has 90 bucks
+
+const gus = new Hamster('Gus')
+//Gus has been created
+gus.owner = 'Timmy'
+timmy.buyHamster(gus)
+timmy.money()
+timmy.feeling()
