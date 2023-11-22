@@ -36,13 +36,16 @@ class Person {
             console.log(this.name)
         }
         getAge(){
-            console.log(this.age)
+            console.log(`${this.name} is ${this.age} years old`)
         }
         getWeight(){
-            console.log(this.weight)
+            console.log(`${this.name} is ${this.weight}`)
         }
         greeting(){
-            console.log(`Greetings I'm ${this.name}`)
+            console.log(`Greetings I'm ${this.name}! It's nice to meet you!`)
+        }
+        feeling(){
+            console.log(`How are you feeling, ${this.name}?  \n${this.name}: I'm feeling ${this.mood}...`)
         }
         //increment weight, increment mood eat()
         //
@@ -67,5 +70,17 @@ class Person {
             this.bankAcount-=hamster.getPrice()
         }
 }
-const Timmy = new Person('Timmy')
-Timmy.greeting()
+const timmy = new Person('Timmy')
+timmy.greeting()
+for (let i=0; i<5; i++){
+    timmy.ageUp()
+}
+timmy.getAge()
+for(let i=0; i < 5; i++){
+    timmy.eat()
+}
+timmy.feeling()
+for (let i = 0; i < 9; i++){
+    timmy.ageUp()
+}
+timmy.getAge()
