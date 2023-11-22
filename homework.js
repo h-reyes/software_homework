@@ -180,6 +180,9 @@ class Chef{
         this.bankAcount +=+ menui.price1
         this.tired--
     }
+    orderC(){
+        console.log(`${this.name} has served ${this.order} orders!`)
+    }
     
 }
 
@@ -191,3 +194,9 @@ carlos.money()
 carlos.orderUp(hamburger)
 carlos.getMood()
 carlos.money()
+for(let i=0; i<5; i++){
+    carlos.break()
+}
+carlos.getMood()
+carlos.orderUp(frenchF)
+carlos.orderC()
