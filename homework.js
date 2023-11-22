@@ -127,7 +127,7 @@ class Dinner {
         this.class = '';
     }
     order(){
-        console.log(`${this.item}`)
+        return this.price1
     }
     itemDes(){
         console.log(`${this.item} is $${this.price1}`)
@@ -135,6 +135,7 @@ class Dinner {
     dishClass(){
         console.log(`This ${this.item} is known as ${this.class}`)
     }
+    
 }
 const hamburger= new Dinner ('Hamburger')
 hamburger.price1 = '5.99'
@@ -144,7 +145,44 @@ hamburger.order()
 hamburger.itemDes()
 hamburger.dishClass()
 
+const frenchF = new Dinner ('French Fries')
+frenchF.price1 = '2.99'
+frenchF.class = 'appetizer'
+
+const brownie = new Dinner ('Brownie')
+brownie.price1 = '3'
+brownie.class = 'dessert'
 
 class Chef{
-
+    constructor(name){
+        this.name = name;
+        this.bankAcount = 0;
+        this.tired = 0;
+        this.order = 0;
+        this.menuis = []
+    }
+    getName(){
+        console.log(`${this.name}`)
+    }
+    getMood(){
+        console.log(`How are you feeling, Chef ${this.name}?  \n${this.name}: I'm feeling ${this.tired}...`)
+    }
+    money(){
+        console.log(`${this.name} has ${this.bankAcount} dollars`)
+    }
+    break(){
+        this.tired++
+    }
+    orderUp(menui){
+        this.menuis.push(menui)
+        this.order++
+        this.bankAcount+= menui.price1
+        this.tired--
+    }
 }
+
+const carlos = new Chef('Carlos')
+carlos.getName()
+carlos.orderUp(brownie)
+carlos.getMood()
+carlos.money()
