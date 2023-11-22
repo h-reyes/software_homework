@@ -20,7 +20,8 @@ console.log(hamster)
 //hamster.price = 7
 //console.log(hamster)
 //Hamster {owner: 'Mishelle', name: 'Chonky', price: 15}
-
+const gus = new Hamster('Timmy', 'Gus', '')
+//Gus has been created
 class Person {
     constructor(name){
         this.name = name;
@@ -39,13 +40,16 @@ class Person {
             console.log(`${this.name} is ${this.age} years old`)
         }
         getWeight(){
-            console.log(`${this.name} is ${this.weight}`)
+            console.log(`${this.name} is ${this.weight} lbs`)
         }
         greeting(){
             console.log(`Greetings I'm ${this.name}! It's nice to meet you!`)
         }
         feeling(){
             console.log(`How are you feeling, ${this.name}?  \n${this.name}: I'm feeling ${this.mood}...`)
+        }
+        money(){
+            console.log(`Here is ${this.name}'s bank account. \n${this.name} has ${this.bankAcount} dollars`)
         }
         //increment weight, increment mood eat()
         //
@@ -75,12 +79,15 @@ timmy.greeting()
 for (let i=0; i<5; i++){
     timmy.ageUp()
 }
-timmy.getAge()
+timmy.getAge()//Timmy is 5 yrs old
+timmy.feeling()//Timmy is -5 mood or sad
 for(let i=0; i < 5; i++){
     timmy.eat()
 }
-timmy.feeling()
-for (let i = 0; i < 9; i++){
+timmy.getWeight()//Timmy is 10lbs
+timmy.feeling()//Timmy is neutral or 0
+for (let i = 0; i < 4; i++){
     timmy.ageUp()
 }
-timmy.getAge()
+timmy.getAge()//Timmy is 9 yrs old
+timmy.money()// Timmy has 90 bucks
