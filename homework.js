@@ -101,3 +101,18 @@ gus.owner = 'Timmy'
 timmy.buyHamster(gus)
 timmy.money()
 timmy.feeling()
+for(let i = 0; i < 6; i++){
+    timmy.ageUp()
+}
+timmy.getAge()
+timmy.money()
+timmy.feeling()
+for(let i = 0; i < 2; i++){
+    timmy.eat()
+}
+timmy.feeling()
+timmy.getWeight()
+for(let i= 0; i < 2; i++){
+    timmy.excercise()
+}
+timmy.getWeight()
