@@ -117,3 +117,34 @@ for(let i= 0; i < 2; i++){
 }
 timmy.getWeight()
 //Timmy's Story
+
+
+console.log(`-------------------------- Dinner Factory Assignment---------------------`)
+class Dinner {
+    constructor(menui){
+        this.item = menui;
+        this.price1 = '';
+        this.class = '';
+    }
+    order(){
+        console.log(`${this.item}`)
+    }
+    itemDes(){
+        console.log(`${this.item} is $${this.price1}`)
+    }
+    dishClass(){
+        console.log(`This ${this.item} is known as ${this.class}`)
+    }
+}
+const hamburger= new Dinner ('Hamburger')
+hamburger.price1 = '5.99'
+hamburger.class = 'entree'
+
+hamburger.order()
+hamburger.itemDes()
+hamburger.dishClass()
+
+
+class Chef{
+
+}
