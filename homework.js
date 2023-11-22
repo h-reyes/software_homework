@@ -173,16 +173,21 @@ class Chef{
     break(){
         this.tired++
     }
+
     orderUp(menui){
         this.menuis.push(menui)
         this.order++
-        this.bankAcount+= menui.price1
+        this.bankAcount +=+ menui.price1
         this.tired--
     }
+    
 }
 
 const carlos = new Chef('Carlos')
 carlos.getName()
 carlos.orderUp(brownie)
+carlos.getMood()
+carlos.money()
+carlos.orderUp(hamburger)
 carlos.getMood()
 carlos.money()
