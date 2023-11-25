@@ -3,8 +3,8 @@ ex: let some = 10
 
 How do we change the value of a variable?somevar = 12 or using a loop or using i++
 
-How do we assign an existing variable to a new variable? Let can assign and reassign by assigning 
-ex:let newvar = somevar
+How do we assign an existing variable to a new variable? Let can assign and but cannot reassign; to reassign call the variable and equal it to something else. 
+ex:newvar = somevar
 
 Remind me, what are declare, assign, and define? declare is saying something exists is, assign is saying this is something, and define is saying this something is going to be used like this.
 
