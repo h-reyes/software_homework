@@ -65,12 +65,12 @@ function App() {
   })}
 </ul>
 
-<h3>{test}</h3>
+{/* <h3>{test}</h3>
 <button onClick={() => {
   test += 1
   console.log(test)
 }
-}>+</button>
+}>+</button> */}
 
     </div>
         );
