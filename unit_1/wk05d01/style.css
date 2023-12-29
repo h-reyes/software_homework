@@ -9,11 +9,11 @@
 }
 
 body {
-    font-family: Tahoma,Geneva, sans-serif;
+    font-family: Tahoma, Geneva, sans-serif;
     height: 100vh;
     margin: 0;
     display: grid;
-    grid-template-columns: 3rem auto;
+    grid-template-rows: 3rem auto;
     color: white;
 }
 
