@@ -14,5 +14,10 @@ document.querySelector('ul')
 .addEventListener('click', handleClick);
 
 function handleClick(evt){
-    console.log(evt);
+    //change color when comment is clicked
+const ul = document.querySelector('ul');
+ul.addEventListener('click', handleClick);
+function handleClick(evt){
+    evt.target.style.color = 'red';
+}
 }
