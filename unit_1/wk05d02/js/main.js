@@ -12,12 +12,22 @@ btn.addEventListener('click', function(evt){
 
 document.querySelector('ul')
 .addEventListener('click', handleClick);
-
+// specifies of what happens when comment is clicked
 function handleClick(evt){
-    //change color when comment is clicked
 const ul = document.querySelector('ul');
 ul.addEventListener('click', handleClick);
-function handleClick(evt){
-    evt.target.style.color = 'red';
-}
+
+// changes color of clucked comment
+evt.target.style.color = 'red';
+
+// remove event listener for ul clicks
+ul.removeEventListener('click', handleClick);
+
+// Restore event listener for ul clicks and reverts color change
+ul.addEventListener('click', function(evt){
+    // revert color to black
+    evt.target.style.color = 'black';
+    // restore event listener for ul clicks
+    ul.addEventListener('click', handleClick);
+});
 }
