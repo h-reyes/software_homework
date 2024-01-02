@@ -24,7 +24,7 @@ const mainEl = document.querySelector('main');
 //  1.1
 mainEl.style.backgroundColor = 'var(--main-bg)';
 // 1.2
-mainEl.innerHTML = '<h1>WISE Rocks</h1>';
+mainEl.innerHTML = '<h1>WISE Rocks!</h1>';
 // 1.3
 mainEl.classList.add('flex-ctr');
 
@@ -65,7 +65,7 @@ subMenuEl.classList.add('flex-around');
 subMenuEl.style.position = 'absolute';
 
 // 4.5
-subMenuEl.style.top = '0';
+subMenuEl.style.top = 0;
 
 // 5.1
 const topMenuLinks = document.querySelectorAll('#top-menu a');
@@ -100,6 +100,7 @@ for (let link of menuLinks) {
       showingSubMenu = true;
     } else {
       showingSubMenu = false;
+      mainEl.innerHTML = `<h1>${link.text}</h1>`;
     }
     currentLink = link;
   }
@@ -123,4 +124,23 @@ if(showingSubMenu){
 }
 
 
+})
+
+// --------------------------------------
+// 6.0
+subMenuEl.addEventListener('click', function(evt){
+  evt.preventDefault();
+  if (evt.target.tagName !== 'A') {
+    return;
+  }
+  // console.log(evt.target.textContent);
+  // 6.1
+  showingSubMenu = false;
+  subMenuEl.style.top = 0;
+  // 6.2
+for(let link of topMenuLinks){
+  link.classList.remove('active');
+}
+// 6.3
+mainEl.innerHTML = `<h1>${evt.target.textContent}</h1>`
 })
