@@ -1,7 +1,9 @@
 import './App.css';
+import Students from './components/students'
 import { useState } from 'react';
 
-const [studentData, setStudentData] = useState({
+function App() {
+const [studentData] = useState({
   students: 
   [
   {
@@ -65,10 +67,11 @@ const [studentData, setStudentData] = useState({
   ]
   
 })
-function App() {
+
   return (
-   <div>
-    
+   <div className='App'>
+    <h1>Week 08 Day 03 Homework</h1>
+    <Students studentData={studentData}/>
     </div>
   );
 }
