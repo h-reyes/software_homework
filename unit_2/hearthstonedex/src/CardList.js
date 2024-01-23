@@ -4,7 +4,7 @@ import './CardList.css';
 const CardList = () => {
   const [cards, setCards] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 10; // Set the number of cards to display per page
+  const cardsPerPage = 20; // Set the number of cards to display per page
 
   useEffect(() => {
     const fetchCards = async () => {
