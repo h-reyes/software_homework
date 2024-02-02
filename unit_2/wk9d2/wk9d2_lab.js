@@ -82,3 +82,36 @@
 // - **Automating the provisioning of cloud infrastructure (Terraform):** Use infrastructure as code to automate the provisioning and configuration of cloud resources.
 
 // Essentially, a DevOps engineer plays a crucial role in taking the application created by software engineers, ensuring it is bug-free, and optimizing it for efficient and reliable performance for end-users. In the software development lifecycle, UX designers create the design, software engineers build the application, and DevOps engineers deploy and scale the application through automation and collaboration.
+
+function validCard(number) {
+    // Convert the number to a string for easier manipulation
+    let numStr = number.toString();
+
+    // Initialize variables for checksum and total
+    let checksum = parseInt(numStr.charAt(numStr.length - 1));
+    let total = 0;
+
+    // Iterate through the digits of the card number
+    for (let i = numStr.length - 2; i >= 0; i--) {
+        let sum = 0;
+        let digit = parseInt(numStr.charAt(i));
+
+        if ((numStr.length - i) % 2 === 0) {
+            digit *= 2;
+            sum = Math.floor(digit / 10) + (digit % 10);
+        } else {
+            sum = digit;
+        }
+
+        total += sum;
+    }
+
+    // Check if the card number is valid based on the Luhn algorithm
+    return (10 - (total % 10)) === checksum;
+}
+
+// Example usage:
+console.log(validCard(1234567890123456)); // Output: false
+console.log(validCard(4408041234567893)); // Output: true
+console.log(validCard(38520000023237)); // Output: true
+console.log(validCard(4222222222222)); // Output: true
